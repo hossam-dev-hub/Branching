@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Staff Details</title>
+   <link th:href="@{/center-screen.css}" rel="stylesheet">
+</head>
+<body>
+
+    <h2>Staff Details</h2>
+    
+    <div class="center-screen">
+        <form  method="post" th:object="${staff}">
+              <!-- id حقل  -->
+              <!-- id عملت مربع فوق الاسم واسمو  -->
+            <label for="Id">id</label><br>
+              <!-- بعرفو القيم اللي هياخد من الكائن اللي مخزن في القيم  -->                                  <!-- لو مدخلتش قيم اطبع دي -->      
+            <input type="text" placeholder="no" th:field="*{id}" /><br><br>
+            <!-- بعرفو القيم اللي هياخد من الكائن اللي مخزن في القيم  -->
+                 
+            <!-- حقل الاسم -->
+            <label for="staffName">Staff Name</label><br>
+            <input type="text" placeholder="Staff Name" th:field="*{staffname}" /><br><br>
+
+            <!-- حقل المسمى الوظيفي -->
+            <label for="staffTitle">Staff Title</label><br>
+            <input type="text" placeholder="Staff Title" th:field="*{staffTitle}" /><br><br>
+
+            <!-- حقل الراتب -->
+            <label for="staffSalary">Staff Salary</label><br>
+            <input type="text" placeholder="Staff Salary" th:field="*{staaffSalary}" /><br><br>
+
+            <!-- زر إرسال البيانات -->
+            <button type="submit">Save Staff</button>
+
+        </form>
+    </div>
+
+</body>
+</html>

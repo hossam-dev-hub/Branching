@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+ <link th:href="@{/center-screen1.css}" rel="stylesheet">
+</head>
+<body>
+   <p>
+    <!-- رابط يوجه المستخدم إلى مسار إضافة موظف جديد (/staff-deatials) -->
+    <a th:href="@{/staff-deatialskay}">Add New Staff</a><br><br>
+
+    <!-- رابط يوجه المستخدم إلى مسار لعرض جميع الموظفين (/getAllstaffkay) -->
+    <a th:href="@{/getAllstaffkay}">Staff</a>
+</p>
+   <h4>Add New Staff</h4>
+    
+    <div class="center-screen1">
+    <form method="post" th:object="${addNewStaffkay}" th:action="@{/dataSubmitFormkay}">
+      	
+            
+          <!-- معني السطر دي اني بقول انك هتبقي متعبي ومخفي  -->
+            <input type="hidden" th:field="*{id}" /><br><br>
+            <!-- بعرفو القيم اللي هياخد من الكائن اللي مخزن في القيم  -->
+                 
+            <!-- حقل الاسم -->
+            <label for="staffName">Staff Name</label><br>
+              <p th:errors="*{staffname}"></p>
+            <input type="text" placeholder="Staff Name" th:field="*{staffname}" /><br><br>
+
+            <!-- حقل المسمى الوظيفي -->
+            <label for="staffTitle">Staff Title</label><br>
+            <p th:errors="*{staffTitle}"></p>
+            <input type="text" placeholder="Staff Title" th:field="*{staffTitle}" /><br><br>
+
+            <!-- حقل الراتب -->
+            <label for="staffSalary">Staff Salary</label><br>
+            <input type="text" placeholder="Staff Salary" th:field="*{staaffSalary}" /><br><br>
+
+            <!-- زر إرسال البيانات -->
+            <button type="submit">Save Staff</button>
+
+        </form>
+    </div>
+
+</body>
+</html>

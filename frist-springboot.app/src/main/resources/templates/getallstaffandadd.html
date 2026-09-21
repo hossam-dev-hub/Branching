@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>All Staff</title>
+
+<!-- بداية إضافة تنسيقات الـ CSS لرسم حدود الجدول وتنظيم المظهر -->
+<style>
+    /* تنسيق خاص بالجدول ككل وتحديد العرض وإلغاء المسافات بين الحدود */
+    table {
+        width: 80%;
+        border-collapse: collapse;
+        margin: 20px 0;
+    }
+    
+    /* إضافة حدود رمادية وبادينج داخل الخلايا لرص البيانات بشكل مريح */
+    th, td {
+        border: 1px solid #ccc;
+        padding: 10px;
+        text-align: left;
+    }
+    
+    /* تمييز خلفية عناوين الجدول باللون الرمادي الفاتح */
+    th {
+        background-color: #f2f2f2;
+    }
+</style>
+</head>
+<body>
+
+<!-- عنوان الصفحة الرئيسي -->
+<h3>All Staff</h3>
+
+<!-- بداية عنصر الجدول -->
+<table>
+    
+    <!-- الصف الأول الخص بعناوين الأعمدة الرئيسية (Header) -->
+    <tr>
+        <!-- عنوان عمود الرقم التعريفي -->
+        <th>ID</th>  
+        
+        <!-- عنوان عمود اسم الموظف -->
+        <th>Name</th>
+        
+        <!-- عنوان عمود المسمى الوظيفي -->
+        <th>Title</th>
+        
+        <!-- عنوان عمود الراتب -->
+        <th>Salary</th>
+    </tr>
+
+    <!-- استخدام th:each للتكرار على قائمة allstaff القادمة من الـ Controller وإنشاء صف جديد لكل موظف -->
+    <tr th:each="oneStaff: ${allstaff}">
+        
+        <!-- طباعة قيمة id الخاص بالموظف داخل الخلية -->
+        <td th:text="${oneStaff.id}"></td>
+        
+        <!-- طباعة قيمة staffname الخاص بالموظف داخل الخلية -->
+        <td th:text="${oneStaff.staffname}"></td>
+        
+        <!-- طباعة قيمة staffTitle الخاص بالموظف داخل الخلية -->
+        <td th:text="${oneStaff.staffTitle}"></td>
+        
+        <!-- طباعة قيمة الراتب الخاص بالموظف داخل الخلية -->
+        <td th:text="${oneStaff.staaffSalary}"></td>
+    </tr>
+
+<!-- نهاية الجدول -->
+</table>
+
+</body>
+</html>

@@ -1,0 +1,6 @@
+.center-screen1 {
+    display: flex;
+    justify-content: center; /* يخلي المحتوى في المنتصف بالعرض */
+    align-items: center;     /* يخلي المحتوى في المنتصف بالطول */
+    min-height: 100vh;       /* يستغل طول الشاشة بالكامل */
+}
